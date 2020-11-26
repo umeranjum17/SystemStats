@@ -1,7 +1,7 @@
-#System Stats Generator
+# System Stats Generator
 
-##Angular 10 with Electron
+## Angular 10 with Electron
 
-##Material UI
+## Material UI
 
 Generate System Stats Cross platform APP
