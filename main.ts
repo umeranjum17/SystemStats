@@ -1,7 +1,8 @@
-import { app, BrowserWindow, screen } from 'electron';
+import { app, BrowserWindow, screen, ipcMain, ipcRenderer } from 'electron';
 import * as path from 'path';
 import * as url from 'url';
-
+import * as si from "systeminformation"
+import { createImportEqualsDeclaration } from 'typescript';
 let win: BrowserWindow = null;
 const args = process.argv.slice(1),
   serve = args.some(val => val === '--serve');
@@ -67,7 +68,15 @@ try {
       app.quit();
     }
   });
-
+  ipcMain.on('get:cpu:info',async (event,options)=>{
+    let cpudata =await si.cpu()
+    
+    event.returnValue={...cpudata}
+   
+    
+  })
+// promises style - new since version 3
+  console.log("workign")
   app.on('activate', () => {
     // On OS X it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.

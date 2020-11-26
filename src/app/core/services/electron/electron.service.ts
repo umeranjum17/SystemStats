@@ -33,4 +33,7 @@ export class ElectronService {
       this.fs = window.require('fs');
     }
   }
+  fetchSystemInfo(){
+   return this.ipcRenderer.sendSync('get:cpu:info')
+  }
 }

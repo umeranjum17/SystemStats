@@ -1,0 +1,46 @@
+<mat-grid-list style="margin:20px" cols="4" [gutterSize]="'30px'" rowHeight="700px">
+    <mat-grid-tile>
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>
+                    <h1>CPU</h1>
+                </mat-card-title>
+                <mat-card-subtitle>Process details</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="./assets/processor.jpg" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+                <p>Manufacturer :{{manufacturer}}</p>
+                <p>Cores : {{cores}}</p>
+                <p>Physical Cores : {{physicalCores}}</p>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>
+                    <h1>Memory</h1>
+                </mat-card-title>
+                <mat-card-subtitle>Process details</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="./assets/ram.jpg" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+                <p>Cpu details on how much of it is utilized</p>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>
+                    <h1>Temperatures</h1>
+                </mat-card-title>
+                <mat-card-subtitle>Process details</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="./assets/temperature.jpg" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+                <p>Cpu details on how much of it is utilized</p>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

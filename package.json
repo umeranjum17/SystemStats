@@ -31,9 +31,9 @@
     "build:prod": "npm run build -- -c production",
     "ng:serve": "ng serve -c web -o",
     "electron:serve-tsc": "tsc -p tsconfig.serve.json",
-    "electron:serve": "wait-on tcp:4200 && npm run electron:serve-tsc && npx electron . --serve",
+    "electron:serve": "wait-on tcp:4200 && npm run electron:serve-tsc && npx electron main.js --serve -w",
     "electron:local": "npm run build:prod && npx electron .",
-    "electron:build": "npm run build:prod && electron-builder build",
+    "electron:build": "npm run build:prod && electron-builder -mw",
     "test": "ng test --watch=false",
     "test:watch": "ng test",
     "e2e": "npm run build:prod && cross-env TS_NODE_PROJECT='e2e/tsconfig.e2e.json' mocha --timeout 300000 --require ts-node/register e2e/**/*.e2e.ts",
@@ -52,7 +52,7 @@
     "@angular/compiler": "10.0.14",
     "@angular/compiler-cli": "10.0.14",
     "@angular/core": "10.0.14",
-    "@angular/forms": "10.0.14",
+    "@angular/forms": "10.1.3",
     "@angular/language-service": "10.0.14",
     "@angular/platform-browser": "10.0.14",
     "@angular/platform-browser-dynamic": "10.0.14",
@@ -95,5 +95,11 @@
   },
   "engines": {
     "node": ">=10.13.0"
+  },
+  "dependencies": {
+    "@angular/animations": "^10.0.0 || ^11.0.0-0",
+    "@angular/cdk": "10.2.0",
+    "@angular/material": "10.2.0",
+    "systeminformation": "4.27.3"
   }
 }
